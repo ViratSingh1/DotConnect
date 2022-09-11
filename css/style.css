@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'Dosis Regular';
+  src: url("../fonts/Dosis-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Dosis Medium';
+  src: url("../fonts/Dosis-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Dosis Semibold';
+  src: url("../fonts/Dosis-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+body {
+  background-image: linear-gradient(-90deg, red, blue);
+  transition: background-image 0.5s;
+  z-index: 0;
+}
+
+#bg-red {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(-90deg, rgb(255, 0, 0), rgb(0, 0, 0));
+  transition-duration: 0.5s;
+  z-index: -2;
+}
+
+#bg-blue {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(-90deg, rgb(0, 0, 0), rgb(0, 0, 255));
+  transition-duration: 0.5s;
+  z-index: -2;
+}
+
+#bg-yellow {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(-90deg, rgb(255, 180, 0), rgb(0, 0, 0));
+  transition-duration: 0.5s;
+  z-index: -2;
+}
+
+#bg-green {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(-90deg, rgb(0, 100, 0), rgb(0, 0, 0));
+  transition-duration: 0.5s;
+  z-index: -2;
+}
+
+#bg-winner {
+  position: absolute;
+  content: '';
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  transition-duration: 1s;
+  z-index: -1;
+}
+
+.navbar {
+  list-style-type: none;
+  position: fixed;
+  margin: 0;
+  padding: 0 0;
+  width: 100vw;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.navbar-left {
+  float: left;
+  padding: 2.4vh 1.8vw;
+  font-size: 6vh;
+}
+
+.navbar-right {
+  float: right;
+  padding: 3.4vh 1.8vw 3vh;
+  width: 5vw;
+  height: 6vh;
+  max-width: 50px;
+  font-size: 4vh;
+  cursor: pointer;
+}
+
+.navbar a {
+  display: block;
+  font-family: 'Dosis Regular';
+  text-decoration: none;
+  text-shadow: 2px 2px black;
+  text-align: center;
+  color: white;
+  transition: background-color 1s;
+}
+
+.bg-dark, .navbar-right:hover {
+  background-color: black;
+}
+
+.container {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.container table {
+  margin: auto;
+  padding: 1vh;
+  border: 1vh solid rgb(0, 0, 0, 0);
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.container button {
+  width: 10vh;
+  height: 10vh;
+  border: 2vh solid rgb(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background-color: rgb(230, 230, 230);
+  transition-duration: 0.5s;
+  cursor: cell;
+}
+
+@media screen and (max-height: 630px) {
+  .navbar-left {
+    font-size: 37.8px;
+  }
+  .navbar-right {
+    padding: 21.42px 11.34px 18.9px
+  }
+}

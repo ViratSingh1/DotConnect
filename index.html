@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" width="1024px">
+
+<head>
+  <meta charset="utf-8">
+  
+  // SCRIPTS
+  <script src="scripts/jquery-ui/external/jquery/jquery.js"></script>
+  <script src="scripts/jquery-ui/jquery-ui.min.js"></script>
+
+  // STYLESHEETS
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/overlays.css">
+  <link rel="stylesheet" href="scripts/jquery-ui/jquery-ui.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+    integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  
+  <title>Dot Connect</title>
+</head>
+
+<body>
+  <ul class="navbar">
+    <li><a class="navbar-left">DOT CONNECT</a></li>
+    <li><a class="navbar-right" onclick="open_options()" title="OPTIONS"><i class="fas fa-ellipsis-v"></i></a></li>
+    <li><a class="navbar-right" onclick="show_info()" title="INFO"><i class="fas fa-info-circle"></i></a></li>
+    <li><a class="navbar-right" onclick="$('#dialog').dialog('open');" title="RESET"><i class="fas fa-trash-restore"></i></a>
+    </li>
+    <li><a class="navbar-right" onclick="undo()" title="UNDO"><i class="fas fa-undo-alt"></i></a></li>
+  </ul>
+
+  <div id="dialog">
+    <p>Are you sure you want to RESET?</p>
+  </div>
+
+  <div class="options">
+    <table>
+      <tr>
+        <td style="text-align: right;">
+          <div class="num-players">
+            <select id="num-players">
+              <option value="" disabled>no of players</option>
+              <option value=2 selected>players: 2</option>
+              <option value=3>players: 3</option>
+              <option value=4>players: 4</option>
+            </select>
+          </div>
+        </td>
+        <td style="text-align: center;">
+          <div class="req-dots">
+            <select id="req-dots">
+              <option value="" disabled>dots to win</option>
+              <option value="3">dots to win: 3</option>
+              <option value="4" selected>dots to win: 4</option>
+              <option value="5">dots to win: 5</option>
+            </select>
+          </div>
+        </td>
+        <td style="text-align: left;">
+          <div class="start">
+            <button onclick="start_new()">START</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="info">
+    <p>Connect the required number of dots in a straight line oriented in any direction to win.
+      <strong>The dots drop in a vertical column and stack one over another.</strong>
+      The player who does this first, wins the game.
+      The number of dots required to win can be selected from the options menu
+      (<i class="fas fa-ellipsis-v"></i>) in the navigation bar.
+      The number of players can be between 2-4. Also, each player gets exactly one chance for UNDO.
+      Consecutive UNDOs is not allowed.</p>
+  </div>
+
+  <script> $('.info').hide(); $('.options').hide();</script>
+
+  <div class="container">
+    <div id="bg-winner"></div>
+    <div id="bg-red"></div>
+    <div id="bg-blue"></div>
+    <div id="bg-yellow"></div>
+    <div id="bg-green"></div>
+    <table id="grid">
+    </table>
+  </div>
+  <script src="./scripts/tableinserter.js"></script>
+  <script type="text/javascript" src="scripts/variables.js"></script>
+  <script type="text/javascript" src="scripts/script.js"></script>
+  <script type="text/javascript" src="scripts/check_win.js"></script>
+  <script type="text/javascript" src="scripts/reset.js"></script>
+  <script type="text/javascript" src="scripts/undo.js"></script>
+</body>
+
+</html>
